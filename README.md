@@ -4,11 +4,19 @@
  - utilisation de JPA pour la persistence
  - utilisation de [Spark](http://sparkjava.com)
 
-##install & run
+##build
 ```
 git clone https://github.com/afpa-mx2016/spark-todo-app
 cd spark-todo-app
-mvn run
+mvn [-Djava.net.useSystemProxies=true] install
+```
+
+ - Créer une base de donnée et importez le fichier `src/main/resources/todo-app.sql`, modifiez en conséquence le fichier `src/main/resources/META-INF/persistence.xml`
+
+##run
+```
+cd target
+java -jar Spark-todo-app-1.0-SNAPSHOT.jar
 ```
 
 ##tests des Web Services
