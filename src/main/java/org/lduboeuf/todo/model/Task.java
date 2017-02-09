@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "task")
 @XmlRootElement
+
 @NamedQueries({
     @NamedQuery(name = "Task.findAll", query = "SELECT t FROM Task t")
     , @NamedQuery(name = "Task.findById", query = "SELECT t FROM Task t WHERE t.id = :id")
@@ -34,24 +35,31 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Task.findByStatus", query = "SELECT t FROM Task t WHERE t.status = :status")
     , @NamedQuery(name = "Task.findByCreatedAt", query = "SELECT t FROM Task t WHERE t.createdAt = :createdAt")
     , @NamedQuery(name = "Task.findByPriority", query = "SELECT t FROM Task t WHERE t.priority = :priority")})
+
+
 public class Task implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+    
     @Basic(optional = false)
     @Column(name = "task")
     private String task;
+    
     @Basic(optional = false)
     @Column(name = "status")
     private boolean status;
+    
     @Basic(optional = false)
     @Column(name = "created_at", insertable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
+    
     @Basic(optional = false)
     @Column(name = "priority")
     private short priority;
