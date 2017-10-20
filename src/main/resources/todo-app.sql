@@ -39,7 +39,7 @@ CREATE TABLE `task` (
 --
 
 INSERT INTO `task` (`id`, `task`, `status`, `created_at`, `priority`) VALUES
-(345, 'sleep', 1, '2016-10-20 16:11:45', 2),
+(345, 'sleep', 1, '2016-10-20 16:11:45', 2);
 
 
 --
