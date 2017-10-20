@@ -1,13 +1,14 @@
 ##exemple de Web services Gestionnaire de taches mono utilisateur 
 
- - utilisation de Maven pour la gestion des dépendences
- - utilisation de JPA pour la persistence
- - utilisation de [Spark](http://sparkjava.com)
+ - utilisation de Maven pour la gestion des dépendances
+ - utilisation de JPA  pour la persistence
+ - utilisation de [Spark](http://sparkjava.com) ( embarque un serveur web, api haut niveau pour les WS )
 
-##build
+##installation
 ```
 git clone https://github.com/afpa-mx2016/spark-todo-app
 cd spark-todo-app
+mvn clean
 mvn [-Djava.net.useSystemProxies=true] install
 ```
 
@@ -53,5 +54,6 @@ java -jar Spark-todo-app-1.0-SNAPSHOT.jar
 
 
 Mini js-app dans le navigateur `http://localhost:8080/`
+
 
 
