@@ -12,6 +12,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import org.lduboeuf.todo.model.Task;
+import org.lduboeuf.todo.model.dao.TodoDAO;
 import static spark.Spark.delete;
 import static spark.Spark.get;
 import static spark.Spark.port;
@@ -100,6 +101,12 @@ public class Main {
             
             return "ok";
         });
+        
+        
+        get(PREFIX + "/todos2", "application/json", (request, response) -> {
+            List<Task> tasks = TodoDAO.findAll();
+            return tasks;
+        }, new JsonTransformer());
         
     }
 }
